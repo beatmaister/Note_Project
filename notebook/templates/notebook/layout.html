@@ -1,0 +1,50 @@
+{% load static %}
+<head>
+    <title> Layout </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body class="container-fluid" style="background-color: #DFDDD8; font-family: Verdana, Geneva, Tahoma;">
+    <div class="row" style="background-color: #72B9BC;">
+    <div class="navbar" style="background-color: #72B9BC; justify-content: left;">
+        <a class="navbar-brand" style="font-size: 30; font-weight: bolder;"> Notes </a>
+        <div class="form-inline">
+            <a class="btn rounded" id="add_btn">Add</a>
+        </div>
+    </div>
+    <a class="fas fa-bars fa-2x" style="position: absolute; right: 5; margin-top: 10px;"></a>
+
+    </div>
+    <div class="container-fluid" style="padding: 10px;">
+        <div class="row mx-auto ">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+        <a class="btn rounded-pill" id="top_btn" style="box-shadow: 6px 6px 29px -6px rgba(0,0,0,.80); position: fixed; left:-1%; bottom: 10%; background-color: #72B9BC;">
+            Back to Top
+        </a>
+        <div class="popup">
+            <div class="card content">
+                <div class="card-body">
+                <h4 class="card-title" style="font-weight: bold;"> Post A New Note </h4>
+                <form action="{% url 'notebook:notes' %}" method="post">
+                    {% csrf_token %}
+                   <div class="input"> Note  Title </div>
+                   <div><input name="title" style="margin-top: -10px;"></div>
+                    <div class="input">Note Content </div>
+                    <div><input class="note_txt" name="content"></div>
+                    <div class="row">
+                        
+                        <input class="btn" type="submit" style="margin-top: 20px;"> 
+                        <a class="btn rounded" id="close_btn" style="position:absolute; font-weight: bold; margin-top: 20px; right: 0;">X</a>
+                        
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="{% static 'js/notes_js.js' %}"></script>

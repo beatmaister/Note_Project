@@ -1,0 +1,64 @@
+.popup {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0, .75);
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    min-height: 500px;
+    min-width: 350px;
+    height: 50%;
+    width: 40%;
+    background-color: #E5CFA5;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    position: relative;
+}
+
+
+.input{
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid gray;
+}
+
+.note{
+    transition: 1s ease;
+    box-shadow: 1px 5px 20px -2px rgba(0,0,0, .75);
+    text-overflow: clip;
+}
+.del {
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 10px !important;
+}
+
+.note:hover {
+    transform: scale(1.1); 
+}
+.del:hover {
+    color: salmon !important;
+}
+
+.note_txt {
+    width: 250px;
+    height: 150px;
+    margin-top: -10px;
+}
+
+.btn{
+    background-color: #72B9BC;
+    border: 2px solid gray !important;
+}
+
+.btn:hover{
+    background-color: #85999C !important;
+}
+

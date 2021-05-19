@@ -1,0 +1,21 @@
+{% extends "notebook/layout.html" %}
+<head>
+    <title> Register </title>
+</head>
+<body>
+    {% block body %}
+    <div class="Register" style="height: 70%; width:50%; justify-content: center; background-color: #DFDDD8; display: flex;">
+    
+        <form style="display: flex;">
+            <div class="row">First Name <input name="first_name" placeholder="First Name"></div>
+            <div class="row">Last Name <input name="last_name" placeholder="Last Name"></div>
+            <div class="row">Username <input name="username" placeholder="Username"></div>
+            <div class="row">Password <input name="password" placeholder="Password"></div>
+            <div class="row">Confirm Password <input name="confirm password" placeholder="Re-enter password"></div>
+            <div class="row">Email <input name="email" placeholder="Email"></div>
+            <div class="row"><input class="btn" name="submit" type="submit"></div>
+        </form>
+    
+    </div>
+    {% endblock %}
+</body>
